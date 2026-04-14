@@ -273,93 +273,69 @@ https://scholar.google.com/citations?user=9o-zv-UAAAAJ&hl=en&oi=sra<!DOCTYPE htm
     </div>
   </div>
 </section>
+  
+<script>
+/* === AUTO FETCH ABSTRACTS FROM CROSSREF === */
+async function loadAbstracts() {
+  const pubs = document.querySelectorAll(".pub-item[data-doi]");
 
+  for (const pub of pubs) {
+    const doi = pub.getAttribute("data-doi");
+    const abstractEl = pub.querySelector(".abstract");
+
+    if (!doi || !abstractEl) continue;
+
+    try {
+      const res = await fetch(`https://api.crossref.org/works/${doi}`);
+      const data = await res.json();
+
+      let abstract = data.message.abstract;
+
+      if (!abstract) {
+        abstractEl.textContent = "Abstract not available.";
+        continue;
+      }
+
+      // Remove HTML tags (CrossRef returns JATS XML)
+      abstract = abstract.replace(/<[^>]+>/g, "");
+
+      abstractEl.textContent = abstract;
+
+    } catch (err) {
+      abstractEl.textContent = "Abstract unavailable.";
+    }
+  }
+}
+
+/* === BOLD YOUR NAME IN AUTHORS === */
+function highlightAuthor() {
+  const namePattern = /Wood,\s*T\.?/g;
+
+  document.querySelectorAll(".pub-authors").forEach(el => {
+    el.innerHTML = el.innerHTML.replace(
+      namePattern,
+      '<strong>Wood, T.</strong>'
+    );
+  })
 <!-- PUBLICATIONS -->
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <div class="section-inner">
-    <p class="section-title">Publications</p>
-
-    <div class="pub-item">
-      <div class="pub-title">
-        “Intense meditation-related experiences (IMREs) and perceived impacts on the sense of self: An interpretative phenomenological analysis”
-      </div>
-      <div class="pub-authors">
-        Wood, T., Kock, M., Galante, J., & Van Dam, N. T. (2026, under review)
-      </div>
-      <div class="pub-journal">Preprint (OSF)</div>
-      <a href="https://osf.io/preprints/osf/dsfae_v1" target="_blank">Preprint</a>
-
-      <details>
-        <summary>Abstract</summary>
-        <p>
-          This study explores how intense meditation-related experiences influence self-experience,
-          identity, and meaning-making using interpretative phenomenological analysis.
-        </p>
-      </details>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">
-        Mindfulness-Based Programmes for Work Performance: A Systematic Review and Meta-Analysis of Randomised Controlled Trials
-      </div>
-      <div class="pub-authors">
-        Vainre, M., Dalgleish, T., Bendriss-Otiko, T., Butler, M., Kirkpatrick, A., Kosugiyama, N., Mariscotti, F., Martinez-Sosa, C., Sideri, A., Sönksen, S., & Wood, T. (2025)
-      </div>
-      <div class="pub-journal">Stress and Health, 41(6), e70123</div>
-      <a href="https://doi.org/10.1002/smi.70123" target="_blank">DOI</a>
-
-      <details>
-        <summary>Abstract</summary>
-        <p>
-          This meta-analysis evaluates randomized controlled trials of mindfulness-based interventions
-          and their effects on workplace performance and wellbeing outcomes.
-        </p>
-      </details>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">
-        Exploring the mind-brain relationship to advance mental health research and practice
-      </div>
-      <div class="pub-authors">
-        Karunamuni, N., Wood, T., & Galante, J. (2025)
-      </div>
-      <div class="pub-journal">Current Psychology, 1–21</div>
-      <a href="https://doi.org/10.1007/s12144-025-08345-2" target="_blank">DOI</a>
-
-      <details>
-        <summary>Abstract</summary>
-        <p>
-          This paper examines theoretical models linking mental phenomena and brain processes
-          and their implications for clinical and psychological science.
-        </p>
-      </details>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">
-        Mindfulness Teacher Trainees’ Experiences (MTTE): An investigation of intense experiences in mindfulness-based interventions
-      </div>
-      <div class="pub-authors">
-        Jönhagen, E., Wood, T., Niemi, M., & Galante, J. (2024)
-      </div>
-      <div class="pub-journal">PLOS ONE, 19(4), e0301593</div>
-      <a href="https://doi.org/10.1371/journal.pone.0301593" target="_blank">DOI</a>
-
-      <details>
-        <summary>Abstract</summary>
-        <p>
-          This study investigates intense experiences among mindfulness teacher trainees
-          within mindfulness-based interventions.
-        </p>
-      </details>
-    </div>
-
+<div class="pub-item" data-doi="10.1371/journal.pone.0301593">
+  <div class="pub-title">
+    Mindfulness Teacher Trainees’ Experiences (MTTE): An investigation of intense experiences in mindfulness-based interventions
   </div>
-</section>
 
-<!-- TALKS -->
+  <div class="pub-authors">
+    Jönhagen, E., Wood, T., Niemi, M., & Galante, J.
+  </div>
+
+  <div class="pub-journal">PLOS ONE, 19(4), e0301593</div>
+  <a href="https://doi.org/10.1371/journal.pone.0301593" target="_blank">DOI</a>
+
+  <details>
+    <summary>Abstract</summary>
+    <p class="abstract">Loading abstract...</p>
+  </details>
+</div>
+  
 <!-- TALKS -->
 <section id="talks">
   <div class="section-inner">
