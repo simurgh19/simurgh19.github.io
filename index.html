@@ -120,19 +120,23 @@ https://scholar.google.com/citations?user=9o-zv-UAAAAJ&hl=en&oi=sra<!DOCTYPE htm
     /* HOME */
     .profile { display: flex; gap: 2.5rem; align-items: flex-start; }
 
-    .photo-placeholder {
-      width: 170px; height: 170px;
-      border-radius: 50%;
-      background: var(--blue-light);
-      border: 3px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--sans);
-      font-size: 2.4rem;
-      font-weight: 600;
-      color: var(--blue);
-    }
+   .photo-placeholder {
+  width: 170px;
+  height: 170px;
+  min-width: 170px;
+  min-height: 170px;
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--blue-light);
+  border: 3px solid var(--border);
+}
 
     .profile-info h1 {
       font-family: var(--sans);
@@ -218,7 +222,9 @@ https://scholar.google.com/citations?user=9o-zv-UAAAAJ&hl=en&oi=sra<!DOCTYPE htm
 <section id="home">
   <div class="section-inner">
     <div class="profile">
-      <div class="photo-placeholder">TW</div>
+      <div class="photo-placeholder">
+  <img src="headshot.jpg" alt="Tim Wood">
+</div>
 
       <div class="profile-info">
         <h1>Tim Wood</h1>
