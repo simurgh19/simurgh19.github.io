@@ -106,7 +106,7 @@ https://scholar.google.com/citations?user=9o-zv-UAAAAJ&hl=en&oi=sra<!DOCTYPE htm
 
     .section-title {
       font-family: var(--sans);
-      font-size: 0.7rem;
+      font-size: 1.4rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--blue);
@@ -466,18 +466,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
 
+<script>
 /* ORCID sync (best-effort) */
 async function loadORCID() {
   try {
-    const res = await fetch("https://pub.orcid.org/v3.0/0009-0003-7898-2876/works", {
-      headers: { Accept: "application/json" }
-    });
+    const res = await fetch(
+      "https://pub.orcid.org/v3.0/0009-0003-7898-2876/works",
+      {
+        headers: {
+          Accept: "application/json"
+        }
+      }
+    );
+
     const data = await res.json();
     console.log("ORCID data:", data);
+
   } catch (e) {
     console.log("ORCID unavailable in browser context");
   }
 }
+
 loadORCID();
 </script>
 
