@@ -1,4 +1,4 @@
-https://scholar.google.com/citations?user=9o-zv-UAAAAJ&hl=en&oi=sra<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -209,6 +209,101 @@ https://scholar.google.com/citations?user=9o-zv-UAAAAJ&hl=en&oi=sra<!DOCTYPE htm
       font-family: var(--sans);
       font-size: 0.78rem;
     }
+
+    /* =========================
+   MOBILE RESPONSIVE FIXES
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* NAV */
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-brand {
+    margin-bottom: 0.3rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-links a {
+    padding: 0.4rem 0.3rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    height: auto;
+  }
+
+  /* PROFILE STACK */
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profile-info h1 {
+    font-size: 1.6rem;
+  }
+
+  .photo-placeholder {
+    width: 130px;
+    height: 130px;
+    flex: 0 0 130px;
+  }
+
+  /* SOCIAL LINKS */
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* TEXT */
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-inner {
+    padding: 1rem 1rem;
+  }
+
+  /* CV / PUB / TALKS */
+  .cv-entry,
+  .pub-item,
+  .talk-item {
+    padding: 0.35rem 0;
+  }
+
+  .cv-role,
+  .pub-title,
+  .talk-title {
+    font-size: 0.95rem;
+  }
+
+  .cv-org,
+  .talk-venue,
+  .pub-journal {
+    font-size: 0.85rem;
+  }
+
+  /* DETAILS (ABSTRACTS) */
+  details {
+    font-size: 0.85rem;
+  }
+}
   </style>
 </head>
 
@@ -276,7 +371,6 @@ https://scholar.google.com/citations?user=9o-zv-UAAAAJ&hl=en&oi=sra<!DOCTYPE htm
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
 <!-- PUBLICATIONS -->
 <section id="publications">
   <div class="section-inner">
@@ -361,7 +455,6 @@ https://scholar.google.com/citations?user=9o-zv-UAAAAJ&hl=en&oi=sra<!DOCTYPE htm
   </div>
 </section>
 
-<!-- TALKS -->
 <!-- TALKS -->
 <section id="talks">
   <div class="section-inner">
