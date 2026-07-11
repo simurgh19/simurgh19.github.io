@@ -187,6 +187,27 @@
       color: var(--muted);
     }
 
+    /* EXPERIENCE */
+    .exp-item {
+      padding: .45rem 0;
+    }
+
+    .exp-role {
+      font-family: var(--sans);
+      font-weight: 600;
+      line-height: var(--line-tight);
+    }
+
+    .exp-org {
+      font-family: var(--sans);
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .exp-desc {
+      margin-bottom: 0.3rem;
+    }
+
     /* PUBLICATIONS */
     details {
       margin-top: 0.6rem;
@@ -283,19 +304,22 @@
   /* CV / PUB / TALKS */
   .cv-entry,
   .pub-item,
-  .talk-item {
+  .talk-item,
+  .exp-item {
     padding: 0.35rem 0;
   }
 
   .cv-role,
   .pub-title,
-  .talk-title {
+  .talk-title,
+  .exp-role {
     font-size: 0.95rem;
   }
 
   .cv-org,
   .talk-venue,
-  .pub-journal {
+  .pub-journal,
+  .exp-org {
     font-size: 0.85rem;
   }
 
@@ -342,10 +366,11 @@ nav {
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="#home">Tim Wood</a>
+    <span class="nav-brand">Tim Wood</span>
     <div class="nav-links">
       <a href="#home">Home</a>
-      <a href="#cv">CV</a>
+      <a href="#cv">Education</a>
+      <a href="#experience">Experience</a>
       <a href="#publications">Publications</a>
       <a href="#talks">Talks</a>
     </div>
@@ -384,7 +409,7 @@ nav {
 <!-- CV -->
 <section id="cv">
   <div class="section-inner">
-    <p class="section-title">Curriculum Vitae</p>
+    <p class="section-title">Education</p>
 
     <div class="cv-entry">
       <div class="cv-role">PhD - <a href="https://psychologicalsciences.unimelb.edu.au/" target="_blank" rel="noopener">
@@ -411,20 +436,38 @@ nav {
   </div>
 </section>
 
+<!-- RESEARCH AND TEACHING EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-title">Research and Teaching Experience</p>
+
+    <div class="exp-item">
+      <div class="exp-role">Research Assistant (multiple projects) | Tutor, "The Art and Science of Meditation"</div>
+      <div class="exp-org">University of Melbourne – Contemplative Studies Centre · Melbourne, VIC, Australia · 2023 – 2024</div>
+      <p class="exp-desc">
+        Worked independently and in teams to advance research on meditation effects, including literature reviews, coding in R, and qualitative data analysis.
+      </p>
+      <p class="exp-desc">
+        Tutored a section of an undergraduate meditation course, helping students understand and engage critically with wisdom traditions and their meditative practices.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- PUBLICATIONS -->
 <section id="publications">
   <div class="section-inner">
-    <p class="section-title">Publications</p>
+    <p class="section-title">Selected Publications</p>
 
     <div class="pub-item">
       <div class="pub-title">
-        “Intense meditation-related experiences (IMREs) and perceived impacts on the sense of self: An interpretative phenomenological analysis”
+        "Intense meditation-related experiences (IMREs) and perceived impacts on the sense of self: An interpretative phenomenological analysis"
       </div>
       <div class="pub-authors">
-        Wood, T., Kock, M., Galante, J., & Van Dam, N. T. (2026, under review)
+        Wood, T., Kock, M., Galante, J., & Van Dam, N. T. (2026)
       </div>
-      <div class="pub-journal">Preprint (OSF)</div>
-      <a href="https://osf.io/preprints/osf/dsfae_v1" target="_blank">Preprint</a>
+      <div class="pub-journal">Mindfulness</div>
+      <a href="https://rdcu.be/fjApN" target="_blank">DOI</a>
 
       <details>
         <summary>Abstract</summary>
@@ -475,7 +518,7 @@ nav {
 
     <div class="pub-item">
       <div class="pub-title">
-        Mindfulness Teacher Trainees’ Experiences (MTTE): An investigation of intense experiences in mindfulness-based interventions
+        Mindfulness Teacher Trainees' Experiences (MTTE): An investigation of intense experiences in mindfulness-based interventions
       </div>
       <div class="pub-authors">
         Jönhagen, E., Wood, T., Niemi, M., & Galante, J. (2024)
@@ -502,7 +545,16 @@ nav {
 
     <div class="talk-item">
       <div class="talk-title">
-        “Impacts of Intense Meditation-Related Experiences (IMREs) on Identity, Self-Narrative, and Meaning Making: A Cross-Sectional Survey”
+        "Energy-Like Somatic Experiences and Meditation"
+      </div>
+      <div class="talk-venue">
+        Presentation · Academy for the Advancement of Postmaterialist Sciences · Online Conference · July 2026
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-title">
+        "Impacts of Intense Meditation-Related Experiences (IMREs) on Identity, Self-Narrative, and Meaning Making: A Cross-Sectional Survey"
       </div>
       <div class="talk-venue">
         Poster · International Society for Contemplative Research · University of North Carolina, Chapel Hill, NC · November 2025
@@ -511,16 +563,16 @@ nav {
 
     <div class="talk-item">
       <div class="talk-title">
-        “Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis”
+        "Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis"
       </div>
       <div class="talk-venue">
-        Poster · Association for Bahá’í Studies · Calgary, Canada · August 2025
+        Poster · Association for Bahá'í Studies · Calgary, Canada · August 2025
       </div>
     </div>
 
     <div class="talk-item">
       <div class="talk-title">
-        “Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis”
+        "Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis"
       </div>
       <div class="talk-venue">
         Poster · Mind and Life Summer Research Institute · Garrison Institute, NY · June 2025
@@ -529,7 +581,7 @@ nav {
 
     <div class="talk-item">
       <div class="talk-title">
-        “Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis”
+        "Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis"
       </div>
       <div class="talk-venue">
         Presentation · International Conference on Mindfulness · Bangor University, Wales · August 2024
@@ -538,7 +590,7 @@ nav {
 
     <div class="talk-item">
       <div class="talk-title">
-        “Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis”
+        "Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis"
       </div>
       <div class="talk-venue">
         Invited Talk · York St John University · York, UK · July 2024
@@ -547,7 +599,7 @@ nav {
 
     <div class="talk-item">
       <div class="talk-title">
-        “Identities, Societies, and Consciousnesses: An Interdisciplinary Critique of Contemplative Research”
+        "Identities, Societies, and Consciousnesses: An Interdisciplinary Critique of Contemplative Research"
       </div>
       <div class="talk-venue">
         Panel · Psychology and the Other Conference · Northeastern University London, UK · July 2024
@@ -556,7 +608,7 @@ nav {
 
     <div class="talk-item">
       <div class="talk-title">
-        “Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis”
+        "Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis"
       </div>
       <div class="talk-venue">
         Invited Talk · KU Leuven · Leuven, Belgium · July 2024
@@ -565,7 +617,7 @@ nav {
 
     <div class="talk-item">
       <div class="talk-title">
-        “Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis”
+        "Intense Meditation-Related Experience Impacts on the Sense of Self: An Interpretative Phenomenological Analysis"
       </div>
       <div class="talk-venue">
         Panel · International Society for Contemplative Research · University of Padova, Italy · June 2024
@@ -574,7 +626,7 @@ nav {
 
     <div class="talk-item">
       <div class="talk-title">
-        “Modelling the Self in Relation to Meditation Practice—Can Different Interdisciplinary Views Ever Be Reconciled?”
+        "Modelling the Self in Relation to Meditation Practice—Can Different Interdisciplinary Views Ever Be Reconciled?"
       </div>
       <div class="talk-venue">
         Presentation · International Society for Contemplative Research · University of Padova, Italy · June 2024
@@ -583,7 +635,7 @@ nav {
 
     <div class="talk-item">
       <div class="talk-title">
-        “Self, Consciousness, and the More-than-Human: A Critique of Contemplative Research”
+        "Self, Consciousness, and the More-than-Human: A Critique of Contemplative Research"
       </div>
       <div class="talk-venue">
         Panel · Inventing the Human Conference · University of Melbourne, Australia · November 2023
