@@ -391,7 +391,26 @@ nav {
         <div class="social-links">
           <a href="https://orcid.org/0009-0003-7898-2876" target="_blank">ORCID</a>
           <a href="https://scholar.google.com/citations?user=9o-zv-UAAAAJ&hl=en&oi=sra" target="_blank">Google Scholar</a>
-          <a href="mailto:timwood82@gmail.com">Email</a>
+          
+<a href="#" id="email-button">Email Me</a>
+
+<script>
+  document.getElementById("email-button").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    const username = "timwood82";
+    const domain = "gmail.com";
+    const email = username + "@" + domain;
+
+    const gmailURL =
+      "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+      encodeURIComponent(email);
+
+    window.open(gmailURL, "_blank", "noopener,noreferrer");
+  });
+</script>
+```
+
         </div>
 
         <p>
